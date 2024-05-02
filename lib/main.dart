@@ -10,10 +10,12 @@ import 'controller/homescreen_con.dart';
 import 'controller/search_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -39,7 +41,7 @@ class MyApp extends StatelessWidget {
           home: Consumer<SplashController>(
             builder: (context, splashScreenProvider, _) {
               return splashScreenProvider.isSplashFinished
-                  ? NewsSplash()
+                  ? const NewsSplash()
                   : MainPage(); // Replace with your home screen
             },
           ),
